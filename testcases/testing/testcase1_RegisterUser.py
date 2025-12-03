@@ -88,10 +88,5 @@ def register_user():
     delete_page.get_title()
     delete_page.deleted_confirm()
 
-
-
-
-    time.sleep(2)
-
 print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 register_user()

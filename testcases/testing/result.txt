@@ -1,2 +1,0 @@
-ket qua la: PASS
-ket qua la: FAIL

@@ -15,10 +15,7 @@ class BasePage:
         element.send_keys(text)
 
     def get_text(self, locator):
-        e = self.wait.until(EC.visibility_of_element_located(locator))
-        if not e:
-            return None
-        return e.text
+        return self.wait.until(EC.visibility_of_element_located(locator)).text
 
     def scroll(self, locator):
         self.driver.execute_script("arguments[0].scrollIntoView();", self.driver.find_element(*locator))
