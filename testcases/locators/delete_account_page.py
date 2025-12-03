@@ -1,7 +1,5 @@
 from selenium.webdriver.common.by import By
 
-# FIXME: xoá bỏ import không liên quan
-# from basic_exercises.basicPython import result1
 from testcases.bases.base_page import BasePage
 
 class DeleteAccountPage(BasePage):
