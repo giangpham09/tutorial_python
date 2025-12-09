@@ -8,6 +8,8 @@ class LoggedInPage(BasePage):
 
     def get_logged_tag(self,username):
         tag=self.get_text(self.LOGGED_TAG)
+        if not tag:
+            return 'FAIL'
         if tag==f'Logged in as {username}':
             result='PASS'
         else:

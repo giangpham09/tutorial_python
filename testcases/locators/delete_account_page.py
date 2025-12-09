@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
-from basic_exercises.basicPython import result1
+# FIXME: xoá bỏ import thừa
+# from basic_exercises.basicPython import result1
 from testcases.bases.base_page import BasePage
 
 class DeleteAccountPage(BasePage):
@@ -9,6 +10,8 @@ class DeleteAccountPage(BasePage):
 
     def get_title(self):
         title=self.get_text(self.TITLE)
+        if not title:
+            return 'FAIL'
         if title=='ACCOUNT DELETED!':
             result='PASS'
         else:

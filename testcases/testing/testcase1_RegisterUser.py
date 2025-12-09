@@ -1,5 +1,4 @@
 import random
-import time
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -28,7 +27,11 @@ def register_user():
     homepage.open_homepage()
 
     # step 3. Verify that home page is visible successfully
-    homepage.get_banner()
+    result_step_3 = homepage.get_banner()
+    if result_step_3 == "FAIL":
+        # FAIL -> Dừng lại, không chạy các step bên dưới nữa
+        print("Step3: FAIL -> Dừng lại, không chạy các step sau")
+        return
 
     # step 4. Click on 'Signup / Login' button
     homepage.go_to_login()
@@ -88,5 +91,7 @@ def register_user():
     delete_page.get_title()
     delete_page.deleted_confirm()
 
-print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-register_user()
+
+if __name__=="__main__":
+    print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    register_user()
